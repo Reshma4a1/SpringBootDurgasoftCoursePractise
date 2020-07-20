@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd
+    http://www.springframework.org/schema/aop 
+    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+    ">
+    
+    <context:component-scan base-package = "com.Durgasoft.SpringBootUsingSpringAnnotationsandXML"></context:component-scan>
+    
+
+	<!--  <context:annotation-config></context:annotation-config>
+		/> -->
+<!-- Using multiple XML so import all XMLs here
+	<bean id="StudentDAO" class="com.Durgasoft.SpringBootUsingSpringAnnotationsandXML.DAO.StudentDAO">
+	</bean>
+	<bean id="StudentService" class="com.Durgasoft.SpringBootUsingSpringAnnotationsandXML.Service.StudentService">
+	</bean>
+
+	<bean id="StudentController" class="com.Durgasoft.SpringBootUsingSpringAnnotationsandXML.Controller.StudentController">
+	</bean>-->
+
+<bean id = "HelloService" class = "com.Durgasoft.SpringBootUsingSpringAnnotationsandXML.Hello.HelloService">
+<property name = "message" value="${key.message}" ></property>
+</bean>
+ 
+ <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+ <property name ="location" value = "hello.properties"></property>
+ </bean>
+ </beans>
